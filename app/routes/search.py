@@ -4,7 +4,11 @@ from app.services.yahoo_service import search_stock
 router = APIRouter()
 
 
-@router.get("/search")
+@router.get(
+    "/search",
+    summary="Search Indian stocks",
+    description="Search Indian stocks by company name or symbol."
+)
 def search(query: str):
 
     try:

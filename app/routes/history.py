@@ -4,7 +4,11 @@ from app.services.yahoo_service import get_stock_history
 router = APIRouter()
 
 
-@router.get("/history")
+@router.get(
+    "/history",
+    summary="Get historical stock data",
+    description="Fetch OHLC historical market data."
+)
 def history(
     symbol: str,
     interval: str = "1d",
